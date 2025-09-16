@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de Bord Admin - Global Auto Club</title>
+    <meta name="description" content="Interface administrative sécurisée pour la gestion des demandes d'adhésion et communications membres de Global Auto Club." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fglobalaut6263back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-surface text-primary font-inter">
+    <!-- Admin Header -->
+    <header class="bg-background border-b border-border-light shadow-minimal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & Admin Title -->
+                <div class="flex items-center space-x-4">
+                    <a href="homepage.html" class="flex items-center space-x-3">
+                        <svg class="w-8 h-8 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                        </svg>
+                        <span class="font-montserrat font-bold text-lg text-primary">Global Auto Club</span>
+                    </a>
+                    <div class="hidden md:block h-6 w-px bg-border-light"></div>
+                    <div class="hidden md:block">
+                        <span class="text-text-secondary text-sm">Administration</span>
+                    </div>
+                </div>
+
+                <!-- Admin Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 text-sm text-text-secondary">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        <span>Admin</span>
+                    </div>
+                    <button class="text-text-secondary hover:text-primary transition-colors duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-5a7.5 7.5 0 00-15 0v5h5l-5 5-5-5h5V7a9.5 9.5 0 0119 0v10z"/>
+                        </svg>
+                    </button>
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors duration-300" title="Retour au site">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Dashboard Stats -->
+        <section class="mb-8">
+            <h1 class="font-montserrat font-bold text-3xl text-primary mb-6">Tableau de Bord</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- New Inquiries -->
+                <div class="bg-background rounded-lg p-6 border border-border-light shadow-minimal">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-text-secondary text-sm font-medium">Nouvelles Demandes</p>
+                            <p class="text-2xl font-montserrat font-bold text-primary">12</p>
+                        </div>
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-success text-sm font-medium">+3 aujourd'hui</span>
+                    </div>
+                </div>
+
+                <!-- Pending Responses -->
+                <div class="bg-background rounded-lg p-6 border border-border-light shadow-minimal">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-text-secondary text-sm font-medium">En Attente</p>
+                            <p class="text-2xl font-montserrat font-bold text-primary">8</p>
+                        </div>
+                        <div class="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-warning text-sm font-medium">Réponse requise</span>
+                    </div>
+                </div>
+
+                <!-- Membership Applications -->
+                <div class="bg-background rounded-lg p-6 border border-border-light shadow-minimal">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-text-secondary text-sm font-medium">Candidatures</p>
+                            <p class="text-2xl font-montserrat font-bold text-primary">5</p>
+                        </div>
+                        <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-success text-sm font-medium">Cette semaine</span>
+                    </div>
+                </div>
+
+                <!-- Response Rate -->
+                <div class="bg-background rounded-lg p-6 border border-border-light shadow-minimal">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-text-secondary text-sm font-medium">Taux de Réponse</p>
+                            <p class="text-2xl font-montserrat font-bold text-primary">94%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-primary text-sm font-medium">Derniers 30 jours</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters and Actions -->
+        <section class="mb-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active" data-filter="all">
+                        Toutes (25)
+                    </button>
+                    <button class="filter-btn" data-filter="inscription">
+                        Inscriptions (5)
+                    </button>
+                    <button class="filter-btn" data-filter="questioning">
+                        Questions (8)
+                    </button>
+                    <button class="filter-btn" data-filter="events">
+                        Événements (7)
+                    </button>
+                    <button class="filter-btn" data-filter="partnerships">
+                        Partenariats (3)
+                    </button>
+                    <button class="filter-btn" data-filter="other">
+                        Autres (2)
+                    </button>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <input type="text" placeholder="Rechercher..." class="pl-10 pr-4 py-2 border border-border-light rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors duration-300" />
+                        <svg class="w-5 h-5 text-text-secondary absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <button class="btn-secondary text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Exporter
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inquiries Table -->
+        <section class="bg-background rounded-lg border border-border-light shadow-minimal overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-light">
+                <h2 class="font-montserrat font-semibold text-lg text-primary">Demandes Récentes</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-surface">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Contact</th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Priorité</th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Statut</th>
+                            <th class="px-6 py-3 text-left text-xs font-montserrat font-semibold text-text-secondary uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-background divide-y divide-border-light">
+                        <!-- Inquiry 1 -->
+                        <tr class="inquiry-row hover:bg-surface transition-colors duration-200" data-type="inscription">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                            <span class="text-accent font-montserrat font-semibold">PD</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-primary">Philippe Dubois</div>
+                                        <div class="text-sm text-text-secondary">philippe.dubois@email.fr</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
+                                    Inscription
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error/10 text-error">
+                                    Haute
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">
+                                14 Sep 2025, 08:30
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                                    En attente
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-accent hover:text-primary mr-3 transition-colors duration-300" onclick="viewInquiry(1)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-primary hover:text-accent transition-colors duration-300" onclick="respondToInquiry(1)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Inquiry 2 -->
+                        <tr class="inquiry-row hover:bg-surface transition-colors duration-200" data-type="questioning">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                            <span class="text-accent font-montserrat font-semibold">ML</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-primary">Marie Laurent</div>
+                                        <div class="text-sm text-text-secondary">marie.laurent@email.fr</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                                    Question
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                                    Moyenne
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">
+                                13 Sep 2025, 16:45
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
+                                    Répondu
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-accent hover:text-primary mr-3 transition-colors duration-300" onclick="viewInquiry(2)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-text-secondary hover:text-accent transition-colors duration-300" onclick="followUp(2)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Inquiry 3 -->
+                        <tr class="inquiry-row hover:bg-surface transition-colors duration-200" data-type="events">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                            <span class="text-accent font-montserrat font-semibold">JR</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-primary">Jean-Michel Rousseau</div>
+                                        <div class="text-sm text-text-secondary">jm.rousseau@email.fr</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent">
+                                    Événement
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-text-secondary/10 text-text-secondary">
+                                    Basse
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">
+                                12 Sep 2025, 11:20
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                                    En attente
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-accent hover:text-primary mr-3 transition-colors duration-300" onclick="viewInquiry(3)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-primary hover:text-accent transition-colors duration-300" onclick="respondToInquiry(3)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Inquiry 4 -->
+                        <tr class="inquiry-row hover:bg-surface transition-colors duration-200" data-type="partnerships">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                            <span class="text-accent font-montserrat font-semibold">AB</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-primary">Antoine Bernard</div>
+                                        <div class="text-sm text-text-secondary">a.bernard@luxuryauto.fr</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary/10 text-secondary">
+                                    Partenariat
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error/10 text-error">
+                                    Haute
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">
+                                11 Sep 2025, 14:15
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                                    En attente
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-accent hover:text-primary mr-3 transition-colors duration-300" onclick="viewInquiry(4)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-primary hover:text-accent transition-colors duration-300" onclick="respondToInquiry(4)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Inquiry 5 -->
+                        <tr class="inquiry-row hover:bg-surface transition-colors duration-200" data-type="inscription">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <input type="checkbox" class="rounded border-border-light text-accent focus:ring-accent" />
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center">
+                                            <span class="text-accent font-montserrat font-semibold">SD</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-primary">Sophie Delacroix</div>
+                                        <div class="text-sm text-text-secondary">sophie.delacroix@email.fr</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
+                                    Inscription
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">
+                                    Moyenne
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-text-secondary">
+                                10 Sep 2025, 09:30
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
+                                    Répondu
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <button class="text-accent hover:text-primary mr-3 transition-colors duration-300" onclick="viewInquiry(5)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-text-secondary hover:text-accent transition-colors duration-300" onclick="followUp(5)">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Footer -->
+            <div class="bg-surface px-6 py-3 border-t border-border-light">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <select class="border border-border-light rounded px-3 py-1 text-sm focus:ring-2 focus:ring-accent focus:border-accent">
+                            <option>Actions groupées</option>
+                            <option>Marquer comme lu</option>
+                            <option>Marquer comme prioritaire</option>
+                            <option>Archiver</option>
+                        </select>
+                        <button class="btn-secondary text-sm py-1">Appliquer</button>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <span>Affichage 1-5 sur 25</span>
+                        <div class="flex space-x-1">
+                            <button class="p-1 rounded hover:bg-background transition-colors duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <button class="p-1 rounded hover:bg-background transition-colors duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="mt-8 grid md:grid-cols-2 gap-6">
+            <!-- Response Templates -->
+            <div class="bg-background rounded-lg border border-border-light shadow-minimal p-6">
+                <h3 class="font-montserrat font-semibold text-lg text-primary mb-4">Modèles de Réponse</h3>
+                <div class="space-y-3">
+                    <button class="w-full text-left p-3 rounded-lg border border-border-light hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                        <div class="font-medium text-primary">Confirmation d'inscription</div>
+                        <div class="text-sm text-text-secondary">Réponse automatique pour les nouvelles candidatures</div>
+                    </button>
+                    <button class="w-full text-left p-3 rounded-lg border border-border-light hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                        <div class="font-medium text-primary">Information générale</div>
+                        <div class="text-sm text-text-secondary">Réponse aux questions sur le club</div>
+                    </button>
+                    <button class="w-full text-left p-3 rounded-lg border border-border-light hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                        <div class="font-medium text-primary">Invitation événement</div>
+                        <div class="text-sm text-text-secondary">Invitation aux événements exclusifs</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-background rounded-lg border border-border-light shadow-minimal p-6">
+                <h3 class="font-montserrat font-semibold text-lg text-primary mb-4">Activité Récente</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-2 h-2 bg-success rounded-full mt-2"></div>
+                        <div>
+                            <p class="text-sm text-primary">Nouvelle candidature de Philippe Dubois</p>
+                            <p class="text-xs text-text-secondary">Il y a 2 heures</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-2 h-2 bg-accent rounded-full mt-2"></div>
+                        <div>
+                            <p class="text-sm text-primary">Réponse envoyée à Marie Laurent</p>
+                            <p class="text-xs text-text-secondary">Il y a 4 heures</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-2 h-2 bg-primary rounded-full mt-2"></div>
+                        <div>
+                            <p class="text-sm text-primary">Demande de partenariat archivée</p>
+                            <p class="text-xs text-text-secondary">Hier</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-2 h-2 bg-warning rounded-full mt-2"></div>
+                        <div>
+                            <p class="text-sm text-primary">Rappel: 3 demandes en attente</p>
+                            <p class="text-xs text-text-secondary">Hier</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inquiry Detail Modal -->
+    <div id="inquiryModal" class="fixed inset-0 bg-secondary/50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-background rounded-lg shadow-premium max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="flex items-center justify-between p-6 border-b border-border-light">
+                    <h3 class="font-montserrat font-semibold text-lg text-primary">Détails de la Demande</h3>
+                    <button onclick="closeModal()" class="text-text-secondary hover:text-primary transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="p-6">
+                    <div id="modalContent">
+                        <!-- Content will be dynamically loaded -->
+                    </div>
+                </div>
+                
+                <div class="flex justify-end space-x-3 p-6 border-t border-border-light">
+                    <button onclick="closeModal()" class="btn-secondary">Fermer</button>
+                    <button class="btn-primary">Répondre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background border-t border-border-light mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <svg class="w-6 h-6 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                    </svg>
+                    <span class="font-montserrat font-semibold text-primary">Global Auto Club - Administration</span>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-text-secondary">
+                    <a href="homepage.html" class="hover:text-accent transition-colors duration-300">Retour au site</a>
+                    <a href="javascript:void(0)" class="hover:text-accent transition-colors duration-300">Aide</a>
+                    <span>© 2025 Global Auto Club. Tous droits réservés.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const inquiryRows = document.querySelectorAll('.inquiry-row');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterType = button.getAttribute('data-filter');
+                
+                inquiryRows.forEach(row => {
+                    if (filterType === 'all' || row.getAttribute('data-type') === filterType) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functions
+        function viewInquiry(id) {
+            const modal = document.getElementById('inquiryModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Sample inquiry data (in real app, this would come from server)
+            const inquiries = {
+                1: {
+                    name: 'Philippe Dubois',
+                    email: 'philippe.dubois@email.fr',
+                    phone: '+33 6 12 34 56 78',
+                    type: 'Inscription',
+                    priority: 'Haute',
+                    date: '14 Sep 2025, 08:30',
+                    message: 'Bonjour, je suis très intéressé par une adhésion Premium au Global Auto Club. Je possède une collection de véhicules de sport et souhaiterais rejoindre votre communauté exclusive. Pourriez-vous me fournir plus d\'informations sur le processus d\'inscription et les prochains événements ?',
+                    status: 'En attente'
+                },
+                2: {
+                    name: 'Marie Laurent',
+                    email: 'marie.laurent@email.fr',
+                    phone: '+33 6 98 76 54 32',
+                    type: 'Question',
+                    priority: 'Moyenne',
+                    date: '13 Sep 2025, 16:45',
+                    message: 'J\'aimerais en savoir plus sur les journées circuit privées. Sont-elles adaptées aux débutants ? Quel niveau de conduite est requis ?',
+                    status: 'Répondu'
+                }
+            };
+            
+            const inquiry = inquiries[id];
+            if (inquiry) {
+                modalContent.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-montserrat font-semibold text-primary mb-3">Informations Contact</h4>
+                                <div class="space-y-2">
+                                    <p><span class="font-medium">Nom:</span> ${inquiry.name}</p>
+                                    <p><span class="font-medium">Email:</span> ${inquiry.email}</p>
+                                    <p><span class="font-medium">Téléphone:</span> ${inquiry.phone}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-semibold text-primary mb-3">Détails Demande</h4>
+                                <div class="space-y-2">
+                                    <p><span class="font-medium">Type:</span> ${inquiry.type}</p>
+                                    <p><span class="font-medium">Priorité:</span> ${inquiry.priority}</p>
+                                    <p><span class="font-medium">Date:</span> ${inquiry.date}</p>
+                                    <p><span class="font-medium">Statut:</span> ${inquiry.status}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-montserrat font-semibold text-primary mb-3">Message</h4>
+                            <div class="bg-surface p-4 rounded-lg">
+                                <p class="text-text-secondary">${inquiry.message}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('inquiryModal').classList.add('hidden');
+        }
+
+        function respondToInquiry(id) {
+            alert(`Ouverture de l'interface de réponse pour la demande #${id}`);
+        }
+
+        function followUp(id) {
+            alert(`Programmation d'un suivi pour la demande #${id}`);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('inquiryModal').addEventListener('click', (e) => {
+            if (e.target.id === 'inquiryModal') {
+                closeModal();
+            }
+        });
+
+        // Add styles for filter buttons
+        const style = document.createElement('style');
+        style.textContent = `
+            .filter-btn {
+                @apply px-4 py-2 text-sm font-medium text-text-secondary bg-background border border-border-light rounded-lg hover:border-accent hover:text-accent transition-all duration-300;
+            }
+            .filter-btn.active {
+                @apply bg-accent text-primary border-accent;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Search functionality
+        const searchInput = document.querySelector('input[placeholder="Rechercher..."]');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            inquiryRows.forEach(row => {
+                const name = row.querySelector('.text-sm.font-medium').textContent.toLowerCase();
+                const email = row.querySelector('.text-sm.text-text-secondary').textContent.toLowerCase();
+                if (name.includes(searchTerm) || email.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Auto-refresh data every 30 seconds (in real app)
+        setInterval(() => {
+            // In a real application, this would fetch new data from the server
+            console.log('Refreshing dashboard data...');
+        }, 30000);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

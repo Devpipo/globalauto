@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1A1A2E; /* sophisticated-navy */
+  --color-secondary: #2C2C2C; /* professional-charcoal */
+  --color-accent: #C41E3A; /* sophisticated-red - changed from premium-gold */
+  
+  /* Background Colors */
+  --color-background: #FFFFFF; /* pure-white */
+  --color-surface: #F8F9FA; /* subtle-gray */
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A2E; /* sophisticated-navy */
+  --color-text-secondary: #6C757D; /* muted-gray */
+  
+  /* Status Colors */
+  --color-success: #28A745; /* success-green */
+  --color-warning: #FFC107; /* warning-amber */
+  --color-error: #DC3545; /* error-red */
+  
+  /* Border Colors */
+  --color-border-light: #E5E7EB; /* light-gray */
+  --color-border-accent: #C41E3A; /* sophisticated-red - changed from premium-gold */
+  
+  /* Shadow Values */
+  --shadow-minimal: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Animation Durations */
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-background font-montserrat font-semibold px-6 py-3 rounded-lg transition-all duration-normal hover:shadow-premium;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-accent text-accent font-montserrat font-semibold px-6 py-3 rounded-lg transition-all duration-normal hover:bg-accent hover:text-background;
+  }
+  
+  .card-minimal {
+    @apply bg-surface border border-border-light rounded-lg p-6 shadow-minimal transition-all duration-normal hover:shadow-premium;
+  }
+  
+  .text-accent-elegant {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all var(--duration-normal) ease-in-out;
+  }
+  
+  .transition-fast {
+    transition: all var(--duration-fast) ease-in-out;
+  }
+  
+  .transition-slow {
+    transition: all var(--duration-slow) ease-in-out;
+  }
+}
